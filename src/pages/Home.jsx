@@ -5,29 +5,19 @@ import Footer from "../components/Footer/Footer";
 
 import features from "../data/features";
 
+import styles from "./Home.module.css";
+
 function Home() {
     return (
         <>
             <Hero />
 
-            <section>
-                <h2
-                    style={{
-                        textAlign: "center",
-                        margin: "40px 0 20px"
-                    }}
-                >
+            <section className={styles.featureSection}>
+                <h2 className={styles.heading}>
                     Our Features
                 </h2>
 
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2,1fr)",
-                        gap: "20px",
-                        padding: "20px"
-                    }}
-                >
+                <div className={styles.featureContainer}>
                     {features.map((feature) => (
                         <FeatureCard
                             key={feature.id}
@@ -39,6 +29,7 @@ function Home() {
             </section>
 
             <Benefits />
+
             <Footer />
         </>
     );

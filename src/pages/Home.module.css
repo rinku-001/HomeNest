@@ -1,0 +1,15 @@
+.featureSection{
+    padding:40px 20px;
+}
+
+.heading{
+    text-align:center;
+    color:#1e3a5f;
+    margin-bottom:30px;
+}
+
+.featureContainer{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}

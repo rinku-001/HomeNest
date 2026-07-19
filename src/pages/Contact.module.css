@@ -1,0 +1,47 @@
+.container{
+    width:70%;
+    margin:40px auto;
+}
+
+.heading{
+    text-align:center;
+    color:#1e3a5f;
+    margin-bottom:30px;
+}
+
+.formGroup{
+    margin-bottom:20px;
+}
+
+.formGroup label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+}
+
+.radioGroup,
+.checkboxGroup{
+    display:flex;
+    gap:20px;
+}
+
+.buttonGroup{
+    display:flex;
+    gap:20px;
+}
+
+.buttonGroup button{
+    padding:10px 20px;
+    background-color:#1e3a5f;
+    color:white;
+    border:none;
+    cursor:pointer;
+}

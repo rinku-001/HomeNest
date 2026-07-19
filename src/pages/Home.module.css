@@ -1,23 +1,33 @@
 .featureSection{
-    padding:40px 20px;
+    padding:84px 20px 48px;
 }
 
 .heading{
     text-align:center;
-    color:#1e3a5f;
-    margin-bottom:30px;
+    font-family:'Playfair Display', serif;
+    font-size:clamp(2rem, 4vw, 3rem);
+    color:#0f172a;
+    margin-bottom:28px;
+    letter-spacing:-0.02em;
 }
 
 .featureContainer{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:24px;
+    max-width:1100px;
+    margin:0 auto;
 }
 
 @media (max-width:768px){
 
+    .featureSection{
+        padding:64px 16px 32px;
+    }
+
     .featureContainer{
         grid-template-columns:1fr;
+        gap:16px;
     }
 
 }

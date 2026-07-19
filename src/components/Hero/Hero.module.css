@@ -1,31 +1,82 @@
 .hero{
-    background-color:#dbeafe;
-    padding:80px 20px;
+    position:relative;
+    overflow:hidden;
+    padding:96px 20px;
     text-align:center;
+    background:
+        linear-gradient(135deg, rgba(15,23,42,0.96) 0%, rgba(30,58,95,0.96) 58%, rgba(255,152,0,0.82) 140%);
+    color:white;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:32px;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:32px;
+    pointer-events:none;
+}
+
+.content{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    padding:40px 32px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.14);
+    box-shadow:0 24px 60px rgba(15,23,42,0.28);
+    backdrop-filter:blur(14px);
 }
 
 .content h1{
-    font-size:40px;
-    color:#1e3a5f;
-    margin-bottom:20px;
+    font-family:'Playfair Display', serif;
+    font-size:clamp(2.6rem, 5vw, 4.6rem);
+    line-height:1.05;
+    letter-spacing:-0.03em;
+    margin-bottom:18px;
 }
 
 .content p{
-    font-size:18px;
-    color:#444;
-    margin-bottom:30px;
+    max-width:640px;
+    margin:0 auto 32px;
+    font-size:clamp(1rem, 1.7vw, 1.15rem);
+    color:rgba(255,255,255,0.88);
 }
 
 .content button{
-    background-color:#1e3a5f;
-    color:white;
+    background:linear-gradient(135deg, #fbbf24 0%, #fb923c 100%);
+    color:#0f172a;
     border:none;
-    padding:12px 25px;
+    padding:14px 28px;
     font-size:16px;
+    font-weight:700;
     cursor:pointer;
-    border-radius:5px;
+    border-radius:999px;
+    box-shadow:0 18px 34px rgba(251,146,60,0.32);
+    transition:transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .content button:hover{
-    background-color:#16314d;
+    transform:translateY(-2px);
+    box-shadow:0 22px 40px rgba(251,146,60,0.4);
+    filter:saturate(1.05);
+}
+
+@media (max-width:768px){
+
+    .hero{
+        padding:72px 16px;
+    }
+
+    .hero::before{
+        inset:16px;
+        border-radius:24px;
+    }
+
+    .content{
+        padding:28px 20px;
+        border-radius:24px;
+    }
+
 }

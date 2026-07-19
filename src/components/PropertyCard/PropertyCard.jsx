@@ -10,8 +10,6 @@ function PropertyCard(props) {
             <p><strong>Size:</strong> {props.size}</p>
 
             <p><strong>Price:</strong> {props.price}</p>
-
-            <button>View Details</button>
         </div>
     );
 }

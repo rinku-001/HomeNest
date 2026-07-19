@@ -19,3 +19,23 @@
     grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
+
+.filterSection{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.filterSection button{
+    padding:10px 20px;
+    background-color:#1e3a5f;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.filterSection button:hover{
+    background-color:#16314d;
+}

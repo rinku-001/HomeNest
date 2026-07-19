@@ -1,9 +1,20 @@
+import { useState } from "react";
 import styles from "./Properties.module.css";
 
 import properties from "../data/properties";
 import PropertyCard from "../components/PropertyCard/PropertyCard";
 
 function Properties() {
+
+    const [selectedType, setSelectedType] = useState("All");
+
+    const filteredProperties =
+        selectedType === "All"
+            ? properties
+            : properties.filter(
+                  (property) => property.type === selectedType
+              );
+
     return (
         <section className={styles.container}>
 
@@ -16,8 +27,26 @@ function Properties() {
                 for buying, renting and leasing.
             </p>
 
+            <div className={styles.filterSection}>
+                <button onClick={() => setSelectedType("All")}>
+                    All
+                </button>
+
+                <button onClick={() => setSelectedType("Buy")}>
+                    Buy
+                </button>
+
+                <button onClick={() => setSelectedType("Rent")}>
+                    Rent
+                </button>
+
+                <button onClick={() => setSelectedType("Lease")}>
+                    Lease
+                </button>
+            </div>
+
             <div className={styles.propertyContainer}>
-                {properties.map((property) => (
+                {filteredProperties.map((property) => (
                     <PropertyCard
                         key={property.id}
                         title={property.title}

@@ -65,3 +65,19 @@
     color:#1e3a5f;
     margin-bottom:30px;
 }
+
+@media (max-width:768px){
+
+    .propertyContainer{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .testimonialContainer{
+        grid-template-columns:1fr;
+    }
+
+}

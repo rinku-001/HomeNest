@@ -51,3 +51,23 @@
     margin-top:5px;
     font-size:14px;
 }
+
+@media (max-width:768px){
+
+    .container{
+        width:90%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .buttonGroup{
+        flex-direction:column;
+    }
+
+    .buttonGroup button{
+        width:100%;
+    }
+
+}

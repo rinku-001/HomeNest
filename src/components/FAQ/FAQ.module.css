@@ -7,8 +7,15 @@
 }
 
 .question{
+    display:block;
+    width:100%;
+    background:none;
+    border:none;
+    padding:0;
     cursor:pointer;
     color:#1e3a5f;
+    text-align:left;
+    font:inherit;
 }
 
 .answer{

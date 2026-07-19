@@ -62,17 +62,13 @@ function Contact() {
 
         if (formData.email === "") {
             newErrors.email = "Email is required";
-        }
-
-        if (!formData.email.includes("@")) {
+        } else if (!formData.email.includes("@")) {
             newErrors.email = "Enter a valid email";
         }
 
         if (formData.phone === "") {
             newErrors.phone = "Phone Number is required";
-        }
-
-        if (formData.phone.length !== 10) {
+        } else if (!/^\d{10}$/.test(formData.phone)) {
             newErrors.phone = "Phone Number must be 10 digits";
         }
 
@@ -131,6 +127,7 @@ function Contact() {
         });
 
         setErrors({});
+        setSubmitted(false);
     }
 
     return (
@@ -142,15 +139,26 @@ function Contact() {
 
             {submitted ? (
 
-                <h2>Your enquiry has been submitted successfully.</h2>
+                <div>
+                    <h2>Your enquiry has been submitted successfully.</h2>
+
+                    <button
+                        type="button"
+                        className={styles.successButton}
+                        onClick={handleReset}
+                    >
+                        Submit another enquiry
+                    </button>
+                </div>
 
             ) : (
 
                 <form onSubmit={handleSubmit}>
 
                     <div className={styles.formGroup}>
-                        <label>Full Name</label>
+                        <label htmlFor="fullName">Full Name</label>
                         <input
+                            id="fullName"
                             type="text"
                             name="fullName"
                             value={formData.fullName}
@@ -164,8 +172,9 @@ function Contact() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label>Email</label>
+                        <label htmlFor="email">Email</label>
                         <input
+                            id="email"
                             type="email"
                             name="email"
                             value={formData.email}
@@ -179,8 +188,9 @@ function Contact() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label>Phone Number</label>
+                        <label htmlFor="phone">Phone Number</label>
                         <input
+                            id="phone"
                             type="text"
                             name="phone"
                             value={formData.phone}
@@ -194,8 +204,9 @@ function Contact() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label>Preferred Visit Date</label>
+                        <label htmlFor="visitDate">Preferred Visit Date</label>
                         <input
+                            id="visitDate"
                             type="date"
                             name="visitDate"
                             value={formData.visitDate}
@@ -209,9 +220,10 @@ function Contact() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label>Property Type</label>
+                        <label htmlFor="propertyType">Property Type</label>
 
                         <select
+                            id="propertyType"
                             name="propertyType"
                             value={formData.propertyType}
                             onChange={handleChange}
@@ -222,6 +234,11 @@ function Contact() {
                             <option value="Plot">Plot</option>
                             <option value="Commercial">Commercial</option>
                         </select>
+                        {errors.propertyType && (
+                            <p className={styles.error}>
+                                {errors.propertyType}
+                            </p>
+                        )}
                     </div>
 
                     <div className={styles.formGroup}>
@@ -310,9 +327,10 @@ function Contact() {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label>Message</label>
+                        <label htmlFor="message">Message</label>
 
                         <textarea
+                            id="message"
                             rows="5"
                             name="message"
                             value={formData.message}

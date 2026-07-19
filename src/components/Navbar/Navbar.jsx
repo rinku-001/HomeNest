@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import logo from "../../assets/icons/homenest-logo.svg";
 
 function Navbar() {
     return (
         <nav className={styles.navbar}>
-            <div className={styles.logo}>
-                HomeNest
+            <div className={styles.brand}>
+                <img className={styles.logo} src={logo} alt="HomeNest logo" />
             </div>
 
             <ul className={styles.navLinks}>

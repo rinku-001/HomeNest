@@ -6,10 +6,15 @@
     padding:15px 40px;
 }
 
+.brand{
+    display:flex;
+    align-items:center;
+}
+
 .logo{
-    color:white;
-    font-size:24px;
-    font-weight:bold;
+    display:block;
+    width:clamp(180px, 18vw, 240px);
+    height:auto;
 }
 
 .navLinks{
@@ -30,6 +35,17 @@
 }
 
 @media (max-width:768px){
+
+    .navbar{
+        padding:15px 20px;
+        gap:15px;
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .logo{
+        width:clamp(160px, 42vw, 200px);
+    }
 
     .navLinks{
         flex-direction:column;

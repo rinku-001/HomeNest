@@ -32,21 +32,39 @@ function Properties() {
             </p>
 
             <div className={styles.filterSection}>
-                <button onClick={() => setSelectedType("All")}>
+
+                <button
+                    className={selectedType === "All" ? styles.active : ""}
+                    aria-pressed={selectedType === "All"}
+                    onClick={() => setSelectedType("All")}
+                >
                     All
                 </button>
 
-                <button onClick={() => setSelectedType("Buy")}>
+                <button
+                    className={selectedType === "Buy" ? styles.active : ""}
+                    aria-pressed={selectedType === "Buy"}
+                    onClick={() => setSelectedType("Buy")}
+                >
                     Buy
                 </button>
 
-                <button onClick={() => setSelectedType("Rent")}>
+                <button
+                    className={selectedType === "Rent" ? styles.active : ""}
+                    aria-pressed={selectedType === "Rent"}
+                    onClick={() => setSelectedType("Rent")}
+                >
                     Rent
                 </button>
 
-                <button onClick={() => setSelectedType("Lease")}>
+                <button
+                    className={selectedType === "Lease" ? styles.active : ""}
+                    aria-pressed={selectedType === "Lease"}
+                    onClick={() => setSelectedType("Lease")}
+                >
                     Lease
                 </button>
+
             </div>
 
             <div className={styles.propertyContainer}>

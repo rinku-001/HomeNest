@@ -1,6 +1,7 @@
 import Hero from "../components/Hero/Hero";
 import FeatureCard from "../components/FeatureCard/FeatureCard";
 import Benefits from "../components/Benefits/Benefits";
+import Footer from "../components/Footer/Footer";
 
 import features from "../data/features";
 
@@ -38,6 +39,7 @@ function Home() {
             </section>
 
             <Benefits />
+            <Footer />
         </>
     );
 }

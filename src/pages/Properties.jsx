@@ -5,6 +5,8 @@ import properties from "../data/properties";
 import PropertyCard from "../components/PropertyCard/PropertyCard";
 import testimonials from "../data/testimonials";
 import Testimonial from "../components/Testimonial/Testimonial";
+import faq from "../data/faq";
+import FAQ from "../components/FAQ/FAQ";
 
 function Properties() {
 
@@ -74,6 +76,24 @@ function Properties() {
                         />
                     ))}
                 </div>
+
+            </section>
+
+            <section className={styles.faqSection}>
+
+                <h2 className={styles.faqHeading}>
+                    Frequently Asked Questions
+                </h2>
+
+                {
+                    faq.map((item) => (
+                        <FAQ
+                            key={item.id}
+                            question={item.question}
+                            answer={item.answer}
+                        />
+                    ))
+                }
 
             </section>
 

@@ -1,0 +1,15 @@
+.container{
+    padding:40px 20px;
+}
+
+.heading{
+    text-align:center;
+    color:#1e3a5f;
+    margin-bottom:15px;
+}
+
+.description{
+    text-align:center;
+    color:#555;
+    margin-bottom:40px;
+}

@@ -1,4 +1,6 @@
 import styles from "./About.module.css";
+import agents from "../data/agents";
+import AgentCard from "../components/AgentCard/AgentCard";
 
 function About() {
     return (
@@ -25,6 +27,22 @@ function About() {
                     real estate platforms by offering quality service
                     and verified properties.
                 </p>
+            </div>
+
+            <h2 className={styles.teamHeading}>
+                Meet Our Team
+            </h2>
+
+            <div className={styles.teamContainer}>
+                {agents.map((agent) => (
+                    <AgentCard
+                        key={agent.id}
+                        photo={agent.photo}
+                        name={agent.name}
+                        role={agent.role}
+                        bio={agent.bio}
+                    />
+                ))}
             </div>
 
         </section>

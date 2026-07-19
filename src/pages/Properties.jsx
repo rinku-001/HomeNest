@@ -3,6 +3,8 @@ import styles from "./Properties.module.css";
 
 import properties from "../data/properties";
 import PropertyCard from "../components/PropertyCard/PropertyCard";
+import testimonials from "../data/testimonials";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 function Properties() {
 
@@ -12,8 +14,8 @@ function Properties() {
         selectedType === "All"
             ? properties
             : properties.filter(
-                  (property) => property.type === selectedType
-              );
+                (property) => property.type === selectedType
+            );
 
     return (
         <section className={styles.container}>
@@ -57,7 +59,29 @@ function Properties() {
                 ))}
             </div>
 
+            <section className={styles.testimonialSection}>
+
+                <h2 className={styles.testimonialHeading}>
+                    What Our Clients Say
+                </h2>
+
+                <div className={styles.testimonialContainer}>
+                    {testimonials.map((testimonial) => (
+                        <Testimonial
+                            key={testimonial.id}
+                            name={testimonial.name}
+                            review={testimonial.review}
+                        />
+                    ))}
+                </div>
+
+            </section>
+
         </section>
+
+
+
+
     );
 }
 

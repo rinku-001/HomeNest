@@ -1,6 +1,8 @@
 import styles from "./About.module.css";
 import agents from "../data/agents";
 import AgentCard from "../components/AgentCard/AgentCard";
+import timeline from "../data/timeline";
+import Timeline from "../components/Timeline/Timeline";
 
 function About() {
     return (
@@ -41,6 +43,20 @@ function About() {
                         name={agent.name}
                         role={agent.role}
                         bio={agent.bio}
+                    />
+                ))}
+            </div>
+
+            <h2 className={styles.timelineHeading}>
+                Our Journey
+            </h2>
+
+            <div className={styles.timelineContainer}>
+                {timeline.map((item) => (
+                    <Timeline
+                        key={item.id}
+                        year={item.year}
+                        event={item.event}
                     />
                 ))}
             </div>

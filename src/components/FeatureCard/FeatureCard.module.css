@@ -1,0 +1,16 @@
+.card{
+    background-color:white;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#1e3a5f;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+}

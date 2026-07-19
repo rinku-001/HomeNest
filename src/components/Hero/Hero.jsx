@@ -1,6 +1,9 @@
 import styles from "./Hero.module.css";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+    const navigate = useNavigate();
+
     return (
         <section className={styles.hero}>
             <div className={styles.content}>
@@ -11,7 +14,9 @@ function Hero() {
                     and leasing at affordable prices.
                 </p>
 
-                <button>Browse Properties</button>
+                <button onClick={() => navigate("/properties")}>
+                    Browse Properties
+                </button>
             </div>
         </section>
     );
